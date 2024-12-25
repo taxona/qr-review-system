@@ -1,0 +1,9 @@
+# .gitignore
+
+# Environment Variables
+.env
+instance/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd

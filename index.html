@@ -1,0 +1,21 @@
+<!-- templates/index.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Customer Reviews</h1>
+{% if reviews %}
+    <div class="reviews">
+        {% for review in reviews %}
+            <div class="review-card">
+                <h3>{{ review.name }}</h3>
+                <p class="rating">{{ '⭐' * review.rating }}</p>
+                <p>{{ review.comment }}</p>
+                <p class="date">{{ review.date.strftime('%B %d, %Y') }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No reviews yet. Be the first to leave a review!</p>
+{% endif %}
+{% endblock %}
